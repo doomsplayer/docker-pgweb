@@ -19,4 +19,4 @@ USER pgweb
 WORKDIR /app
 
 EXPOSE 8081
-CMD ["sh", "-c", "/app/pgweb_linux_amd64 -s --bind=0.0.0.0 --url=$PGURL --ssl $PGSSL"]
+CMD ["sh", "-c", "/app/pgweb_linux_amd64 -s --bind=0.0.0.0 --url=${PGURL:-''} --ssl ${PGSSL:-require}"]
