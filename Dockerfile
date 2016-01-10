@@ -1,11 +1,11 @@
 FROM ubuntu:14.04
-MAINTAINER Daniel Johansson <donnex@donnex.net>
+MAINTAINER Wu Young <doomsplayer@gmail.com>
 
 RUN apt-get update && \
     apt-get install -y wget unzip && \
     rm -rf /var/lib/apt/lists/*
 
-ENV PGWEB_VERSION 0.5.3
+ENV PGWEB_VERSION 0.7.0
 
 RUN \
   cd /tmp && \
@@ -20,4 +20,4 @@ WORKDIR /app
 
 EXPOSE 8080
 ENTRYPOINT ["/app/pgweb_linux_amd64"]
-CMD ["-s", "--bind=0.0.0.0", "--listen=8080"]
+CMD ["-s", "--bind=0.0.0.0", "--listen=8080", "--url=$PGURL"]
