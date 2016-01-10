@@ -19,5 +19,4 @@ USER pgweb
 WORKDIR /app
 
 EXPOSE 8080
-ENTRYPOINT ["/app/pgweb_linux_amd64"]
-CMD ["-s", "--bind=0.0.0.0", "--listen=8080", "--url=$PGURL"]
+CMD ["sh", "-c", "/app/pgweb_linux_amd64", "-s", "--bind=0.0.0.0", "--listen=8080", "--url=$PGURL"]
