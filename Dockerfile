@@ -18,5 +18,5 @@ RUN useradd -ms /bin/bash pgweb
 USER pgweb
 WORKDIR /app
 
-EXPOSE 8080
-CMD ["sh", "-c", "/app/pgweb_linux_amd64", "-s", "--bind=0.0.0.0", "--listen=8080", "--url=$PGURL"]
+EXPOSE 8081
+CMD ["sh", "-c", "/app/pgweb_linux_amd64", "-s", "--bind=0.0.0.0", "--url=$PGURL"]
